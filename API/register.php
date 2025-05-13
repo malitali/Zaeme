@@ -1,15 +1,9 @@
 <?php
-// Very simple debugging output.
-// In Produktion → Passwort nicht im Klartext zurücksenden,
-// sondern z.B. mit password_hash() abspeichern und gar nicht echo‑n!
-
-// immer wenn wir etwas mit der db machen, 
-// brauchen wir require once
 require_once('../system/config.php');
 
 header('Content-Type: text/plain; charset=UTF-8');
 
-// ► Daten aus $_POST abgreifen (kommen dort an, weil wir FormData benutzen)
+// ► Daten aus $_POST abgreifen
 $username = $_POST['username'] ?? '';
 $email    = $_POST['email']    ?? '';
 $password = $_POST['password'] ?? '';
@@ -29,7 +23,7 @@ if (strlen($password) < 8) {
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 // check if user already exists
-$stmt = $pdo->prepare("SELECT * FROM benutzer WHERE email = :email OR username = :username");
+$stmt = $pdo->prepare("SELECT * FROM USER WHERE email = :email OR name = :username");
 $stmt->execute([
     ':email' => $email,
     ':username' => $username
@@ -37,18 +31,16 @@ $stmt->execute([
 $user = $stmt->fetch();
 
 if ($user) {
-
     echo "Username oder E-Mail bereits vergeben";
     exit;
 
 } else {
-
     // insert new user
-    $insert = $pdo->prepare("INSERT INTO benutzer (email, username, password) VALUES (:email, :user, :pass)");
+    $insert = $pdo->prepare("INSERT INTO USER (email, name, passwort) VALUES (:email, :user, :pass)");
     $insert->execute([
-    ':email' => $email,
-    ':pass'  => $hashedPassword,
-    ':user' => $username
+        ':email' => $email,
+        ':user' => $username,
+        ':pass'  => $hashedPassword
     ]);
 
     if ($insert) {
@@ -56,10 +48,4 @@ if ($user) {
     } else {
         echo "Registrierung fehlgeschlagen";
     }
-
-    // ► Ausgeben – nur zum Test!
-    // echo "PHP meldet, Daten erfolgreich empfangen.";
-    // echo "Username: {$username}\n";
-    // echo "E-Mail:   {$email}\n";
-    // echo "Passwort: {$hashedPassword}\n";
 }

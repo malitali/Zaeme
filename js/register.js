@@ -30,13 +30,13 @@ document
 
     // Fetch
     try {
-      const res = await fetch("api/register.php", {
+      const res = await fetch("./API/register.php", {
         method: "POST",
         body: formData,
       });
       const reply = await res.text(); // register.php schickt nur Klartext zurück
       console.log("Antwort vom Server:\n" + reply);
-      alert(reply);
+     // alert(reply);
     } catch (err) {
       console.error("Fehler beim Senden:", err);
     }
