@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFDEF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo-wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  z-index: 10;
+}
+
+.logo {
+  width: 500px;
+  height:auto;
+}
+
+.login-container {
+  background-color: #B4B897;
+  padding: 40px 30px;
+  border-radius: 30px 30px 0 0;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 50px;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  text-align: left;
+  font-size: 19px;
+  color: #000;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.login-button {
+  background-color: #FFC44E;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #f0b733;
+}
+
+.register-button {
+  background-color: #FFD477;
+  color: #000;
+  font-weight: 600;
+  border: 1px solid #4A3F2E;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #f4c65a;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 400px) {
+  .logo {
+    width: 220px;
+  }
+
+  .login-container {
+    border-radius: 30px 30px 0 0;
+    width: 100%;
+    margin-top: -20px;
+  }
+}

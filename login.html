@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
-    <h1>Jetzt Einloggen</h1>
+    <div class="logo-wrapper">
+      <img src="assets/Logo2.png" alt="Zämä Logo" class="logo" />
+    </div>
 
-    <form id="loginForm" action="">
-      <label for="username-email"> Benutzername oder E-Mail:</label>
-      <input id="username-email" type="text" />
-      <br />
-      <br />
+    <div class="login-container">
+      <h1>Hallo!</h1>
 
-      <label for="password">Passwort:</label>
-      <input id="password" type="password" />
-      <br />
-      <br />
+      <form id="loginForm">
+        <label for="username-email">E-Mail</label>
+        <input id="username-email" type="text" required />
 
-      <button type="submit">Login!</button>
+        <label for="password">Passwort</label>
+        <input id="password" type="password" required />
 
-      <p>Noch kein Konto? Jetzt <a href="register.html"> registrieren </a></p>
-    </form>
+        <button type="submit" class="login-button">Einloggen</button>
+
+        <button class="register-button" onclick="window.location.href='register.html'; return false;">
+          Ich habe noch keinen Account
+        </button>
+      </form>
+    </div>
 
     <script src="js/login.js"></script>
   </body>
 </html>
+

@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Registrieren</title>
+    <link rel="stylesheet" href="css/register.css" />
   </head>
   <body>
-    <h1>Jetzt Registrieren für unsere super App!!</h1>
+    <div class="logo-wrapper">
+      <img src="assets/Logo2.png" alt="Zämä Logo" class="logo" />
+    </div>
 
-    <form id="registerForm" action="">
-      <label for="email"> Email:</label>
-      <input id="email" type="email" />
-      <br />
-      <br />
+    <div class="login-container">
+      <h1>Registrieren</h1>
 
-      <label for="username"> Username:</label>
-      <input id="username" type="text" />
-      <br />
-      <br />
+      <form id="registerForm">
+        <label for="email">E-Mail</label>
+        <input id="email" type="email" required />
 
-      <label for="password">Passwort:</label>
-      <input id="password" type="password" />
-      <br />
-      <br />
+        <label for="username">Vollständiger Name</label>
+        <input id="username" type="text" required />
 
-      <button type="submit">Registrieren!</button>
-      
-      <p>Bereits registriert? Jetzt <a href="login.html"> einloggen </a></p>
-    </form>
+        <label for="password">Passwort</label>
+        <input id="password" type="password" required />
+
+        <button type="submit" class="register-button">Registrieren</button>
+      </form>
+
+      <p class="login-link">
+        Hast du bereits ein Account?
+        <a href="login.html"> <strong>Log in</strong></a>
+      </p>
+    </div>
 
     <script src="js/register.js"></script>
   </body>
