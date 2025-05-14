@@ -39,7 +39,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
     if (reply === "Login erfolgreich") {
       // redirect to protected.html
-      window.location.href = "protected.html";
+      window.location.href = "index.html";
     }
   } catch (err) {
     console.error("Fehler beim Senden:", err);

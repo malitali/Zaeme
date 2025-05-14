@@ -3,32 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Events</title>
+    <link rel="stylesheet" href="css/home.css" />
   </head>
   <body>
-    <div class="login-container">
-      
-      <h1>Hallo!</h1>
-
-      <form id="loginForm">
-        <label for="username-email">E-Mail oder Benutzername</label>
-        <input id="username-email" type="text" required />
-
-        <label for="password">Passwort</label>
-        <input id="password" type="password" required />
-
-        <button type="submit">Einloggen</button>
-
-        <p>
-          Ich habe noch keinen Account?
-          <a href="register.html">Registrieren</a>
-        </p>
-      </form>
+    <div class="logo-bar">
+      <img src="assets/Blumen-Titel.png" alt="Blume" class="Blumen-Titel" />
+      <img src="assets/events-titel.png" alt="Events" class="events-logo" />
+      <img src="assets/Profilbild-Ruth.png" alt="Profil" class="profile-pic" />
     </div>
 
-    <script src="js/login.js"></script>
+    <header class="header">
+      <div class="content">
+        <h1 class="welcome">Hallo Ruth!</h1>
+        <h2 class="section-title">Aktuell</h2>
+        <div id="event-list">
 
-    <script src="js/protected.js"></script>
+
+          <section class="event-card">
+            <div class="event-img-wrapper">
+              <img src="assets/Seebild-Breit.png" alt="Spaziergang" class="event-img" />
+            </div>
+            <div class="event-details">
+              <h3>Spaziergang Stausee</h3>
+              <p class="event-info">
+                <span class="icon">📍</span> Alte Bruecke Klingnau<br />
+                <span class="icon">📅</span> 21.05.2025<br />
+                <span class="icon">🕘</span> 09:00 Uhr
+              </p>
+              <div class="organizer">
+                <span>Organisiert von Klaus</span>
+                <img src="assets/Profilbild-Klaus.png" alt="Klaus" class="organizer-pic" />
+              </div>
+            </div>
+          </section>
+
+  <!--
+          <section class="event-card">
+            <img src="assets/Kaffee-breit.png" alt="Kaffee" class="event-img" />
+            <div class="event-details">
+
+
+              <h3>Kaffee bei mir Zuhause</h3>
+              <p class="event-info">
+                <span class="icon">📍</span> Weggasse 20, 3018 Bern<br />
+                <span class="icon">📅</span> 18.06.2025<br />
+                <span class="icon">🕒</span> 14:30 Uhr
+              </p>
+              <div class="organizer">
+                <span>Organisiert von Brigitte</span>
+                <img src="assets/Profilbild-Brigitte.png" alt="Brigitte" class="organizer-pic" />
+              </div>
+            </div>
+          </section>
+
+          <section class="event-card">
+            <img src="assets/Abendessen-breit.png" alt="Abendessen" class="event-img" />
+            <div class="event-details">
+              <h3>Abend essen</h3>
+              <p class="event-info">
+                <span class="icon">📍</span> Koenigstrasse 34, 3008 Bern<br />
+                <span class="icon">📅</span> 27.06.2025<br />
+                <span class="icon">🕕</span> 18:00 Uhr
+              </p>
+              <div class="organizer">
+                <span>Organisiert von Kathrin</span>
+                <img src="assets/Profilbild-Katrin.png" alt="Kathrin" class="organizer-pic" />
+              </div>
+            </div>
+          </section>-->
+        </div>
+        <div class="button-group">
+          <button class="main-button">+ EVENT PLANEN</button>
+          <button class="main-button">MEINE EVENTS</button>
+          <button class="main-button">PROFIL</button>
+        </div>
+      </div>
+    </header>
+    <script src="js/events.js"></script>
   </body>
 </html>
