@@ -1,92 +1,76 @@
 <?php
-// php/eventerstellen.php
+// Fehler anzeigen (nur für Entwicklung – später entfernen!)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+require_once('../system/config.php');
 session_start();
+header('Content-Type: text/plain; charset=UTF-8');
 
-$host = 'ny9kvf.myd.infomaniak.com';
-$db   = 'ny9kvf_zaemae';
-$user = 'ny9kvf_zaemae';
-$pass = 'IK.1d91lb-RTq_';
-$charset = 'utf8mb4';
-
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-
-try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (PDOException $e) {
-    error_log('DB-Verbindung fehlgeschlagen: ' . $e->getMessage());
-    die('Verbindung fehlgeschlagen.');
+// 🔒 Nutzer-Check: nur eingeloggte dürfen Events erstellen
+$organisator_id = $_SESSION['user_id'] ?? null;
+if (!$organisator_id) {
+    echo "Fehler: Du musst eingeloggt sein.";
+    exit;
 }
 
-// Benutzer-ID aus der Session
-if (!isset($_SESSION['user_id'])) {
-    die('Nicht eingeloggt');
-}
-$user_id = $_SESSION['user_id'];
+// 📥 Eingabedaten aus Formular
+$titel    = $_POST['titel']     ?? '';
+$location = $_POST['location']  ?? '';
+$uhrzeit  = $_POST['uhrzeit']   ?? '';
+$datum    = $_POST['datum']     ?? '';
+$notizen  = $_POST['notizen']   ?? '';
+$image_id  = $_POST['image_id']   ?? '';
 
-// Validierung der Pflichtfelder
-$required_fields = ['titel', 'location', 'uhrzeit', 'datum'];
-foreach ($required_fields as $field) {
-    if (empty($_POST[$field])) {
-        die('Bitte alle Pflichtfelder ausfüllen.');
-    }
+// ❗Pflichtfeld-Check
+if (empty($titel) || empty($location) || empty($uhrzeit) || empty($datum)) {
+    echo "Bitte fülle alle Pflichtfelder aus.";
+    exit;
 }
 
-// Bild speichern
-if (!empty($_FILES['image']['name'])) {
+// 📷 Bild speichern
+$bildName = null;
+if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
     $uploadDir = '../uploads/';
     if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0777, true);
+        mkdir($uploadDir, 0755, true); // Ordner erstellen, falls er nicht existiert
     }
-    $imageName = basename($_FILES['image']['name']);
-    $imagePath = $uploadDir . time() . '_' . $imageName;
-    if (!move_uploaded_file($_FILES['image']['tmp_name'], $imagePath)) {
-        error_log('Bild konnte nicht hochgeladen werden.');
-        die('Fehler beim Hochladen des Bildes.');
+
+    $originalName = basename($_FILES['image']['name']);
+    $bildName = uniqid("event_") . "_" . $originalName;
+    $zielPfad = $uploadDir . $bildName;
+
+    if (!move_uploaded_file($_FILES['image']['tmp_name'], $zielPfad)) {
+        echo "Bild konnte nicht gespeichert werden.";
+        exit;
     }
+}
+
+// 🛠️ Optional: Wenn du das Bild später anzeigen willst → auch in DB speichern
+// Du brauchst dann eine Spalte `bild_url` in der Tabelle EVENT
+// Beispiel: ALTER TABLE EVENT ADD bild_url VARCHAR(255);
+
+// 📤 In Datenbank speichern
+$sql = "INSERT INTO EVENT (titel, datum, location, notizen, organisator_id, uhrzeit, bild_url)
+        VALUES (:titel, :datum, :location, :notizen, :organisator_id, :uhrzeit, :bild_url)";
+$stmt = $pdo->prepare($sql);
+
+$erfolg = $stmt->execute([
+    ':titel' => $titel,
+    ':datum' => $datum,
+    ':location' => $location,
+    ':notizen' => $notizen,
+    ':organisator_id' => $organisator_id,
+    ':uhrzeit' => $uhrzeit,
+    ':bild_url' => $bildName
+]);
+
+
+if ($erfolg) {
+    echo "Event wurde erfolgreich erstellt.";
 } else {
-    $imagePath = '';
+    $errorInfo = $stmt->errorInfo();
+    echo "Fehler beim Erstellen des Events: " . $errorInfo[2];
 }
 
-$titel = $_POST['titel'];
-$location = $_POST['location'];
-$uhrzeit = $_POST['uhrzeit'];
-$notizen = $_POST['notizen'] ?? '';
-$datum = $_POST['datum'];
-$emails = $_POST['emails'] ?? [];
-
-// Event speichern inkl. organisator_id
-try {
-    $sql = "INSERT INTO EVENT (organisator_id, titel, location, uhrzeit, notizen, datum, image) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$user_id, $titel, $location, $uhrzeit, $notizen, $datum, $imagePath]);
-    $event_id = $pdo->lastInsertId();
-} catch (PDOException $e) {
-    error_log('Fehler beim Einfügen des Events: ' . $e->getMessage());
-    die('Fehler beim Speichern des Events.');
-}
-
-// Teilnehmer speichern (wenn vorhanden)
-if (!empty($emails)) {
-    try {
-        $sqlTeilnehmer = "INSERT INTO EVENT_TEILNEHMER (event_id, user_id, status) SELECT ?, user_id, 'eingeladen' FROM USER WHERE email = ?";
-        $stmtTeilnehmer = $pdo->prepare($sqlTeilnehmer);
-        foreach ($emails as $email) {
-            if (!empty($email)) {
-                $stmtTeilnehmer->execute([$event_id, $email]);
-            }
-        }
-    } catch (PDOException $e) {
-        error_log('Fehler beim Einfügen der Teilnehmer: ' . $e->getMessage());
-    }
-}
-
-// Erfolgsmeldung anzeigen
-header('Location: ../home.html?success=1');
-exit;
-?>

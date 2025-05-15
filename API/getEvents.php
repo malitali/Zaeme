@@ -1,16 +1,13 @@
 <?php
-
+header('Content-Type: application/json; charset=UTF-8');
 require_once('../system/config.php');
 
-header('Content-Type: text/plain; charset=UTF-8');
-
-
-// check if name or email is in database
-$sql = "SELECT * FROM EVENT";
-
-$stmt = $pdo->prepare($sql);
-$stmt->execute();
-$events = $stmt->fetchAll();
-
-echo json_encode($events);
+try {
+    $stmt = $pdo->prepare("SELECT * FROM EVENT");
+    $stmt->execute();
+    $events = $stmt->fetchAll(PDO::FETCH_ASSOC); // wichtig!
+    echo json_encode($events);
+} catch (Exception $e) {
+    echo json_encode(["error" => $e->getMessage()]);
+}
 
