@@ -1,0 +1,118 @@
+/* ✅ css/event-detail.css */
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-color: #c0c3a0;
+  }
+  
+  .content {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fefced;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .event-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+  }
+  
+  .event-img-wrapper img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .event-details {
+    padding: 1rem;
+  }
+  
+  .event-details h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
+  .event-info {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .event-info .icon {
+    margin-right: 0.5rem;
+  }
+  
+  .organizer {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  
+  .organizer img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+  }
+  
+  .event-note {
+    background-color: #dde0bd;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+  }
+  
+  .buttons button {
+    font-size: 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .buttons button:hover {
+    transform: scale(1.1);
+  }
+  
+  .buttons button:first-child {
+    color: green;
+    border: 3px solid green;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background-color: #eafbea;
+  }
+  
+  .buttons button:last-child {
+    color: red;
+    border: 3px solid red;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background-color: #ffeaea;
+  }
+  
+  .zurueck-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #f5c15c;
+    color: black;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-bottom: 2rem;
+  }
