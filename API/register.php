@@ -1,6 +1,5 @@
 <?php
 require_once('../system/config.php');
-
 header('Content-Type: application/json; charset=UTF-8');
 
 // ► Daten aus $_POST abgreifen
@@ -43,8 +42,14 @@ $success = $insert->execute([
 ]);
 
 if ($success) {
-    echo json_encode(["success" => true, "message" => "Registrierung erfolgreich"]);
+    $user_id = $pdo->lastInsertId(); // 🆕 ID des neuen Users
+    echo json_encode([
+        "success" => true,
+        "message" => "Registrierung erfolgreich",
+        "user_id" => $user_id
+    ]);
 } else {
     echo json_encode(["success" => false, "message" => "Registrierung fehlgeschlagen"]);
 }
+
 

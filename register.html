@@ -14,22 +14,22 @@
     <div class="login-container">
       <h1>Registrieren</h1>
 
-      <form id="registerForm">
+      <form id="registerForm" autocomplete="off">
         <label for="email">E-Mail</label>
-        <input id="email" name="email" type="email" required />
+        <input id="email" name="email" type="email" placeholder="beispiel@mail.ch" required />
 
         <label for="username">Vollständiger Name</label>
-        <input id="username" name="username" type="text" required />
+        <input id="username" name="username" type="text" placeholder="Max Muster" required />
 
         <label for="password">Passwort</label>
-        <input id="password" name="password" type="password" required />
+        <input id="password" name="password" type="password" placeholder="Mind. 8 Zeichen" required />
 
         <button type="submit" class="register-button">Registrieren</button>
       </form>
 
       <p class="login-link">
         Hast du bereits ein Account?
-        <a href="login.html"> <strong>Log in</strong></a>
+        <a href="login.html"><strong>Log in</strong></a>
       </p>
     </div>
 

@@ -3,7 +3,6 @@ console.log("Hello from Register JS!");
 document.getElementById("registerForm").addEventListener("submit", async (e) => {
   e.preventDefault(); // Formular-Reload verhindern
 
-  // Eingabewerte holen
   const username = document.querySelector("#username").value.trim();
   const email = document.querySelector("#email").value.trim();
   const password = document.querySelector("#password").value;
@@ -29,14 +28,13 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
       body: formData,
     });
 
-    const result = await res.json(); // Server gibt jetzt JSON zurück
+    const result = await res.json(); // JSON-Antwort vom Server
     console.log("Antwort vom Server:", result);
-
     alert(result.message);
 
     if (result.success) {
-      // ✅ Weiterleitung nach erfolgreicher Registrierung
-      window.location.href = "index.html";
+      localStorage.setItem("user_id", result.user_id); // 🆕 Automatisch eingeloggt
+      window.location.href = "index.html"; // 🆕 Weiterleitung zur Startseite
     }
 
   } catch (err) {
