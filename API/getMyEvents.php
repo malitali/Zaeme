@@ -17,7 +17,8 @@ $sql = "SELECT e.*
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute(['user_id' => $user_id]);
-$events = $stmt->fetchAll();
+
+$events = $stmt->fetchAll(PDO::FETCH_ASSOC);  // 👈 assoziatives Array für Zugriff via event['bild_url']
 
 echo json_encode($events);
 

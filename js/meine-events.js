@@ -22,7 +22,9 @@ async function fetchMyEvents() {
     events.forEach((event) => {
       const eventCard = document.createElement("div");
       eventCard.className = "event-card";
+
       eventCard.innerHTML = `
+        <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
         <h3>${event.titel}</h3>
         <p><strong>Ort:</strong> ${event.location}</p>
         <p><strong>Datum:</strong> ${event.datum}</p>
@@ -37,4 +39,5 @@ async function fetchMyEvents() {
 }
 
 fetchMyEvents();
+
 

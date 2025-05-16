@@ -19,3 +19,4 @@ if ($event) {
   echo json_encode(["error" => "Event nicht gefunden."]);
 }
 
+
