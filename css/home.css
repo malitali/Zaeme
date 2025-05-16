@@ -87,29 +87,28 @@ body {
 
 .event-card {
   background-color: #fff;
-  border-radius: 30px 30px 30px 30px;
+  border-radius: 30px;
   box-shadow: 0 2px 8px #B4B897;
   padding: 0.8rem;
   text-align: center;
   margin-bottom: 1rem;
   width: 100%;
+  overflow: hidden;
 }
-
 
 .event-img {
   width: 100%;
-  height: 400px;
+  height: 250px;
   border-radius: 12px;
   object-fit: cover;
   display: block;
-  margin-top: -7rem;
-  margin-bottom: -7rem;
+  margin: 0 auto;
 }
 
 .event-details h3 {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 0.3rem;
+  margin: 1rem 0 0.5rem;
 }
 
 .event-info {
@@ -154,10 +153,9 @@ body {
   margin: 10px 0;
   border-radius: 20px;
   font-weight: bold;
-  text-decoration: none; /* 👈 unterstreichen entfernen */
+  text-decoration: none;
   font-size: 1.2em;
   transition: background-color 0.3s;
-
 }
 
 .main-button:hover {
@@ -178,3 +176,4 @@ body {
     font-size: 15px;
   }
 }
+

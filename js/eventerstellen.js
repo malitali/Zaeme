@@ -48,14 +48,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
       const reply = await res.text();
       console.log("Antwort vom Server:", reply);
-      alert(reply);
 
-      if (reply.includes("erfolgreich")) {
-        window.location.href = "home.html";
-      }
+      // ✅ Erfolgsmeldung anzeigen
+      alert("Event wurde erfolgreich erstellt!");
+
+      // 🔁 Auf der Seite bleiben + Formular leeren
+      document.getElementById("eventForm").reset();
+      uploadBox.innerHTML = `<label for="image">📷</label>`;
     } catch (err) {
       console.error("Fehler beim Senden:", err);
       alert("Fehler beim Senden des Formulars.");
     }
   });
 });
+
+
+
+
