@@ -30,6 +30,7 @@ async function fetchMyEvents() {
         <p><strong>Datum:</strong> ${event.datum}</p>
         <p><strong>Uhrzeit:</strong> ${event.uhrzeit}</p>
         <p><strong>Notizen:</strong> ${event.notizen}</p>
+        <p><strong>Organisiert von:</strong> ${event.organisator_name}</p>
       `;
       container.appendChild(eventCard);
     });
@@ -39,5 +40,6 @@ async function fetchMyEvents() {
 }
 
 fetchMyEvents();
+
 
 

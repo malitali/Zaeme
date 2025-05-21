@@ -10,15 +10,22 @@ if (!$user_id) {
     exit;
 }
 
-$sql = "SELECT e.* 
-        FROM EVENT e 
-        JOIN EVENT_TEILNEHMER et ON e.event_id = et.event_id 
+$sql = "SELECT 
+            e.*, 
+            e.Uhrzeit AS uhrzeit,
+            u.name AS organisator_name
+        FROM EVENT e
+        JOIN EVENT_TEILNEHMER et ON e.event_id = et.event_id
+        JOIN USER u ON e.organisator_id = u.user_id
         WHERE et.user_id = :user_id AND et.status = 'ja'";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute(['user_id' => $user_id]);
 
-$events = $stmt->fetchAll(PDO::FETCH_ASSOC);  // 👈 assoziatives Array für Zugriff via event['bild_url']
+$events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo json_encode($events);
+
+
+
 

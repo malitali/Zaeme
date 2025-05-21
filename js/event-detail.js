@@ -33,6 +33,7 @@ async function loadEventDetails() {
       <p><strong>Datum:</strong> ${event.datum}</p>
       <p><strong>Uhrzeit:</strong> ${event.uhrzeit}</p>
       <p><strong>Notizen:</strong> ${event.notizen}</p>
+      <p><strong>Organisiert von:</strong> ${event.organisator_name}</p>
     `;
   } catch (err) {
     console.error("Fehler beim Laden:", err);
@@ -58,6 +59,7 @@ async function respondToEvent(status) {
     console.error("Fehler bei Antwort:", err);
   }
 }
+
 
 
   

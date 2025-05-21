@@ -9,7 +9,15 @@ if (!$eventId) {
   exit;
 }
 
-$stmt = $pdo->prepare("SELECT * FROM EVENT WHERE event_id = :id");
+$sql = "SELECT 
+            e.*, 
+            e.Uhrzeit AS uhrzeit,              -- Alias, damit JS funktioniert
+            u.name AS organisator_name         -- Name mitladen
+        FROM EVENT e 
+        JOIN USER u ON e.organisator_id = u.user_id 
+        WHERE e.event_id = :id";
+
+$stmt = $pdo->prepare($sql);
 $stmt->execute([':id' => $eventId]);
 $event = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -18,5 +26,9 @@ if ($event) {
 } else {
   echo json_encode(["error" => "Event nicht gefunden."]);
 }
+
+
+
+
 
 
