@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil</title>
+  <link rel="stylesheet" href="css/profil.css" />
+</head>
+<body>
+  <div class="profil-container">
+    <h1>Profil</h1>
+    <div class="profil-card">
+     
+
+      <form id="profilForm" enctype="multipart/form-data">
+        <input type="file" id="profilbild" name="profilbild" accept="image/*" />
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="passwort">Passwort</label>
+        <input type="password" id="passwort" name="passwort" placeholder="Neues Passwort" />
+
+        <label for="geburtstag">Geburtstag</label>
+        <input type="date" id="geburtstag" name="geburtstag" />
+
+        <button type="submit" class="main-button">SPEICHERN</button>
+      </form>
+
+      <div class="button-group">
+        <a href="index.html" class="main-button">EVENTS</a>
+        <a href="meine-events.html" class="main-button">MEINE EVENTS</a>
+        <a href="eventerstellen.html" class="main-button">+ EVENT PLANEN</a>
+      </div>
+    </div>
+  </div>
+  <script src="js/profil.js"></script>
+  <script src="js/protected.js"></script>
+</body>
+</html>

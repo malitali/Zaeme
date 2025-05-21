@@ -16,6 +16,6 @@ fetch("./API/protected.php")
     }
   })
   .catch((error) => {
-    console.error("Fehler beim Senden:", error);
+    console.error("Fehler beim Senden:",error);
   });
  

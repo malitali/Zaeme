@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #B4B897;
+  margin: 0;
+  padding: 0;
+}
+
+.profil-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: #fdfbe8;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.profil-container h1 {
+  font-size: 2.5rem;
+  color: #506231;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.main-button {
+  background-color: #FFC44E;
+  color: black;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  display: block;
+}
+
+.main-button:hover {
+  background-color: #f0b733;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
