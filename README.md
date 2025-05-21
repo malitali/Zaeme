@@ -21,7 +21,7 @@ Unsere ursprüngliche Idee war etwas zu umfangreich, weshalb wir einige Funktion
 # Fazit:
 Auch wenn der Weg nicht immer einfach war, haben wir während dieses Projekts enorm viel gelernt – sowohl technisch als auch im Team. Unsere App zämä ist ein funktionierendes Produkt, das den Alltag von Menschen über 50 bereichern kann. Wir haben es geschafft, eine benutzerfreundliche Lösung zu entwickeln, die reale Bedürfnisse anspricht und Freude an gemeinsamen Aktivitäten fördert. Auf das Ergebnis sind wir wirklich stolz.
 
-Lara & Malika <3 
+Lara & Malika 💕
 
 
   
