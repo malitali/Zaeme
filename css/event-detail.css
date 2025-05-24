@@ -94,15 +94,20 @@ body {
   padding: 0.75rem 1rem;
   border-radius: 12px;
   font-size: 1rem;
+  margin: 1.5rem 0 0.5rem;
+  min-height: 4rem; /* sorgt für mehr Höhe auch bei wenig Text */
   line-height: 1.5;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin: 1rem 0;
+
+
 
   /* NEU: immer mindestens 80px hoch */
   min-height: 80px;
   display: flex;
   align-items: center;
 }
+
+
 
 
 
@@ -153,6 +158,9 @@ body {
   align-items: center;
 }
 
+
+
+
 .main-button {
   background-color: #FFC44E;
   color: #000;
@@ -173,4 +181,23 @@ body {
   background-color: #A68539;
   transform: translateY(-1px);
 }
+
+.organizer {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem; /* mehr Luft vor „Bist du dabei?“ */
+  font-size: 1rem;
+  color: #000;
+}
+
+
+.question {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.rem;
+}
+
 

@@ -27,16 +27,20 @@ async function loadEventDetails() {
     }
 
     container.innerHTML = `
-    <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
+    <img src="uploads/${event.bild_url}" alt="${event.titel}" style="width:100%; border-radius:20px; margin-bottom:20px;">
     <h2>${event.titel}</h2>
     <div class="event-info">
-      <div class="icon-text"><span class="icon">📍</span>${event.location}</div>
-      <div class="icon-text"><span class="icon">📅</span>${event.datum}</div>
-      <div class="icon-text"><span class="icon">🕘</span>${event.uhrzeit}</div>
+      <div class="icon-text"><span class="icon">📍</span> ${event.location}</div>
+      <div class="icon-text"><span class="icon">📅</span> ${event.datum}</div>
+      <div class="icon-text"><span class="icon">🕘</span> ${event.uhrzeit}</div>
     </div>
-    <div class="organizer">Organisiert von ${event.organisator_name}</div>
-    ${event.notizen ? `<div class="event-note">${event.notizen}</div>` : ""}
+    <div class="event-note">${event.notizen}</div>
+    <div class="organizer">
+      Organisiert von ${event.organisator_name}
+    </div>
+    <div class="question"><strong>Bist du dabei?</strong></div>
   `;
+  
   
 
   

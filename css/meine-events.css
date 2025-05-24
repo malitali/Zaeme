@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #B4B897;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  min-height: 100vh;
+}
+
+
+
+.events-logo {
+  width: 900px;
+  height: auto;
+  margin-bottom: -150px;
+  margin-top: -150px;
+}
+
+.logo-bar {
+  background-color: transparent;
+  width: 360%;
+  max-width: 600px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+}
+
+.header {
+  background-color: #FFFDEF;
+  padding: 50px 40px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header > .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 20px 0 0;
+  color: #000000;
+}
+
+.event-card {
+  background-color: #FFFDEF;
+  border-radius: 30px;
+  box-shadow: 0 6px 16px rgba(74, 63, 46, 0.4);
+  padding: 50px 40px;
+  text-align: left;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #4A3F2E;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 2 / 1;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.event-card h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: #000;
+}
+
+.event-card p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1rem;
+}
+
+.main-button {
+  background-color: #FFC44E;
+  color: #000;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #4A3F2E;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.main-button:hover {
+  background-color: #A68539;
+  transform: translateY(-1px);
+}
