@@ -7,75 +7,69 @@
     <link rel="stylesheet" href="css/eventerstellen.css" />
   </head>
   <body>
-   
-    
     <div class="logo-bar">
-      <img src="assets/Blumen-Titel.png" alt="Blume" class="blumen-titel" />
+      <img src="assets/events-titel.png" alt="Events" class="events-logo" />
     </div>
-    
 
-    <main class="form-container">
-      <h1 class="form-title">Events erstellen</h1>
+    <header class="header">
+      <div class="content">
+        <h1 class="welcome">Events erstellen</h1>
 
-      <form id="eventForm" enctype="multipart/form-data" class="event-form">
-        <div class="image-upload" id="uploadBox">
-          <label for="image">📷</label>
+        <form id="eventForm" enctype="multipart/form-data" class="event-form">
+          <div class="image-upload" id="uploadBox">
+            <label for="image">📷</label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              accept="image/*"
+              style="display: none"
+            />
+          </div>
+
+          <label for="titel">Titel</label>
           <input
-            type="file"
-            id="image"
-            name="image"
-            accept="image/*"
-            style="display: none"
+            type="text"
+            id="titel"
+            name="titel"
+            placeholder="z. B. Spaziergang am Stausee"
+            required
           />
+
+          <label for="location">Standort</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Standort"
+            required
+          />
+
+          <label for="uhrzeit">Uhrzeit</label>
+          <input type="time" id="uhrzeit" name="uhrzeit" required />
+
+          <label for="notizen">Notizen</label>
+          <textarea
+            id="notizen"
+            name="notizen"
+            placeholder="Schreibe deinen Text hier"
+          ></textarea>
+
+          <label for="datum">Datum</label>
+          <input type="date" id="datum" name="datum" required />
+
+          <button type="submit" class="main-button">EVENT ERSTELLEN</button>
+        </form>
+
+        <div class="button-group">
+          <a href="index.html" class="main-button">EVENTS</a>
+          <a href="meine-events.html" class="main-button">MEINE EVENTS</a>
+          <a href="profil.html" class="main-button">PROFIL</a>
         </div>
-
-        <label for="titel">Titel</label>
-        <input
-          type="text"
-          id="titel"
-          name="titel"
-          placeholder="z. B. Spaziergang am Stausee"
-          required
-        />
-
-        <label for="location">Standort</label>
-        <input
-          type="text"
-          id="location"
-          name="location"
-          placeholder="Standort"
-          required
-        />
-
-        <label for="uhrzeit">Uhrzeit</label>
-        <input type="time" id="uhrzeit" name="uhrzeit" required />
-
-        <label for="notizen">Notizen</label>
-        <textarea
-          id="notizen"
-          name="notizen"
-          placeholder="Schreibe deinen Text hier"
-        ></textarea>
-
-        <label for="datum">Datum</label>
-        <input type="date" id="datum" name="datum" required />
-
-        <button type="submit" class="submit-button">EVENT ERSTELLEN</button>
-      </form>
-
-      
-    <div class="button-group">
-        <a href="index.html" class="main-button">EVENTS</a>
-        <a href="meine-events.html" class="main-button">MEINE EVENTS</a> 
-        <a href="profil.html" class="main-button">PROFIL</a> 
       </div>
-      
-    </main>
+    </header>
 
-    <!-- ALLE SCRIPTS AM ENDE -->
     <script src="js/eventerstellen.js"></script>
-    <script src="js/protected.js"></script> 
-  
-
+    <script src="js/protected.js"></script>
   </body>
 </html>

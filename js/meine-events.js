@@ -21,26 +21,23 @@ async function fetchMyEvents() {
 
     events.forEach((event) => {
       const eventCard = document.createElement("div");
-      eventCard.className = "event-card-wrapper";
+      eventCard.className = "event-card";
+
       eventCard.innerHTML = `
-        <a href="event-detail.html?id=${event.event_id}">
-          <div class="event-card">
-            <div class="event-img-wrapper">
-              <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
-            </div>
-            <div class="event-details">
-              <h3>${event.titel}</h3>
-              <p class="event-info">
-                <span class="icon">📍</span> ${event.location}<br />
-                <span class="icon">📅</span> ${event.datum}<br />
-                <span class="icon">🕘</span> ${event.uhrzeit}
-              </p>
-              <div class="organizer">
-                <span>Organisiert von ${event.organisator_name}</span>
-              </div>
-            </div>
+        <div class="event-img-wrapper">
+          <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
+        </div>
+        <div class="event-details">
+          <h3>${event.titel}</h3>
+          <p class="event-info">
+            <span class="icon">📍</span> ${event.location}<br />
+            <span class="icon">📅</span> ${event.datum}<br />
+            <span class="icon">🕘</span> ${event.uhrzeit}
+          </p>
+          <div class="organizer">
+            <span>Organisiert von ${event.organisator_name}</span>
           </div>
-        </a>
+        </div>
       `;
       container.appendChild(eventCard);
     });
@@ -50,6 +47,7 @@ async function fetchMyEvents() {
 }
 
 fetchMyEvents();
+
 
 
 

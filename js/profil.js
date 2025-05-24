@@ -21,24 +21,14 @@ async function loadProfile() {
     document.getElementById("email").value = user.email;
     document.getElementById("geburtstag").value = user.geburtstag || "";
 
-    if (user.profilbild) {
-      document.getElementById("profilbildPreview").src = `uploads/${user.profilbild}`;
-    }
+    
+    
   } catch (err) {
     console.error("Fehler beim Laden des Profils:", err);
   }
 }
 
-document.getElementById("profilbild").addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (event) {
-      document.getElementById("profilbildPreview").src = event.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-});
+
 
 document.getElementById("profilForm").addEventListener("submit", async (e) => {
   e.preventDefault();

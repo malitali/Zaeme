@@ -7,38 +7,43 @@
   <link rel="stylesheet" href="css/profil.css" />
 </head>
 <body>
-  <div class="profil-container">
-    <h1>Profil</h1>
-    <div class="profil-card">
-     
 
-      <form id="profilForm" enctype="multipart/form-data">
-        <input type="file" id="profilbild" name="profilbild" accept="image/*" />
-
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">E-Mail</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="passwort">Passwort</label>
-        <input type="password" id="passwort" name="passwort" placeholder="Neues Passwort" />
-
-        <label for="geburtstag">Geburtstag</label>
-        <input type="date" id="geburtstag" name="geburtstag" />
-
-        <button type="submit" class="main-button">SPEICHERN</button>
-      </form>
-
-      <div class="button-group">
-        <a href="eventerstellen.html" class="main-button">+ EVENT PLANEN</a>
-        <a href="index.html" class="main-button">EVENTS</a>
-        <a href="meine-events.html" class="main-button">MEINE EVENTS</a>
-      
-      </div>
-    </div>
+  <div class="logo-bar">
+    <img src="assets/Profil-Titel.png" alt="Events" class="events-logo" />
   </div>
+
+  <main class="form-container">
+    
+
+    <form id="profilForm" enctype="multipart/form-data" class="event-form">
+      
+      
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">E-Mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="passwort">Passwort</label>
+      <input type="password" id="passwort" name="passwort" placeholder="Neues Passwort" />
+
+      <label for="geburtstag">Geburtstag</label>
+      <input type="date" id="geburtstag" name="geburtstag" />
+
+      <button type="submit" class="main-button speichern-button">SPEICHERN</button>
+
+    </form>
+
+    <div class="button-group">
+      <a href="eventerstellen.html" class="main-button">+ EVENT PLANEN</a>
+      <a href="index.html" class="main-button">EVENTS</a>
+      <a href="meine-events.html" class="main-button">MEINE EVENTS</a>
+    </div>
+  </main>
+
   <script src="js/profil.js"></script>
   <script src="js/protected.js"></script>
 </body>
 </html>
+
