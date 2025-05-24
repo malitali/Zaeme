@@ -27,14 +27,20 @@ async function loadEventDetails() {
     }
 
     container.innerHTML = `
-      <img src="uploads/${event.bild_url}" alt="${event.titel}" style="width:100%; border-radius:20px; margin-bottom:20px;">
-      <h2>${event.titel}</h2>
-      <p><strong>Ort:</strong> ${event.location}</p>
-      <p><strong>Datum:</strong> ${event.datum}</p>
-      <p><strong>Uhrzeit:</strong> ${event.uhrzeit}</p>
-      <p><strong>Notizen:</strong> ${event.notizen}</p>
-      <p><strong>Organisiert von:</strong> ${event.organisator_name}</p>
-    `;
+    <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
+    <h2>${event.titel}</h2>
+    <div class="event-info">
+      <div class="icon-text"><span class="icon">📍</span>${event.location}</div>
+      <div class="icon-text"><span class="icon">📅</span>${event.datum}</div>
+      <div class="icon-text"><span class="icon">🕘</span>${event.uhrzeit}</div>
+    </div>
+    <div class="organizer">Organisiert von ${event.organisator_name}</div>
+    ${event.notizen ? `<div class="event-note">${event.notizen}</div>` : ""}
+  `;
+  
+
+  
+
   } catch (err) {
     console.error("Fehler beim Laden:", err);
   }
