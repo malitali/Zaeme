@@ -43,12 +43,6 @@ body {
 }
 
 
-
-
-
-
-
-
 .profile-pic {
   width: 80px;
   height: 80px;
@@ -200,6 +194,89 @@ a {
   width: 100%;
   max-width: 600px;
 }
+
+.logout-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: 1px solid #b33939;
+}
+
+.logout-button:hover {
+  background-color: #e63946;
+}
+
+
+/* ✅ Responsive für Mobile (320–480px) */
+@media (max-width: 480px) {
+  .logo-bar {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .Blumen-Titel {
+    width: 180px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+  }
+
+  .events-logo {
+    width: 240px;
+    margin-top: -120px;
+    margin-bottom: -100px;
+  }
+
+  .profile-pic {
+    width: 48px;
+    height: 48px;
+    top: 8px;
+    right: 12px;
+  }
+
+  .header {
+    padding: 30px 20px;
+    border-radius: 20px;
+    max-width: 95%;
+    margin-bottom: 20px;
+  }
+
+  .welcome {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .section-title {
+    font-size: 15px;
+  }
+
+  .event-card {
+    padding: 30px 20px;
+    border-radius: 20px;
+    max-width: 95%;
+  }
+
+  .event-details h3 {
+    font-size: 20px;
+  }
+
+  .event-info {
+    font-size: 16px;
+  }
+
+  .organizer {
+    font-size: 14px;
+  }
+
+  .main-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .button-group {
+    gap: 12px;
+    margin-top: 15px;
+  }
+}
+
 
 
 

@@ -17,7 +17,8 @@ $sql = "SELECT
         FROM EVENT e
         JOIN EVENT_TEILNEHMER et ON e.event_id = et.event_id
         JOIN USER u ON e.organisator_id = u.user_id
-        WHERE et.user_id = :user_id AND et.status = 'ja'";
+        WHERE et.user_id = :user_id AND et.status = 'ja'
+        ORDER BY e.created_at DESC";  // 🔁 Neueste Events zuerst
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute(['user_id' => $user_id]);
@@ -25,6 +26,7 @@ $stmt->execute(['user_id' => $user_id]);
 $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo json_encode($events);
+
 
 
 

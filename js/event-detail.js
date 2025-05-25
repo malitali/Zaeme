@@ -27,7 +27,10 @@ async function loadEventDetails() {
     }
 
     container.innerHTML = `
-    <img src="uploads/${event.bild_url}" alt="${event.titel}" style="width:100%; border-radius:20px; margin-bottom:20px;">
+    <div class="event-img-wrapper">
+  <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
+</div>
+
     <h2>${event.titel}</h2>
     <div class="event-info">
       <div class="icon-text"><span class="icon">📍</span> ${event.location}</div>

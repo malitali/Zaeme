@@ -5,10 +5,11 @@ require_once('../system/config.php');
 try {
     $sql = "SELECT 
                 e.*, 
-                e.Uhrzeit AS uhrzeit,         -- Alias für JS
-                u.name AS organisator_name    -- Name des Organisators
+                e.Uhrzeit AS uhrzeit,
+                u.name AS organisator_name
             FROM EVENT e 
-            JOIN USER u ON e.organisator_id = u.user_id";
+            JOIN USER u ON e.organisator_id = u.user_id
+            ORDER BY e.created_at DESC";  // ✅ Jetzt funktioniert das
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -18,6 +19,8 @@ try {
 } catch (Exception $e) {
     echo json_encode(["error" => $e->getMessage()]);
 }
+
+
 
 
 
