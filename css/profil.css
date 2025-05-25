@@ -227,7 +227,6 @@ textarea {
   .event-form textarea {
     font-size: 14px;
     padding: 8px;
-    max-width: 100%;
   }
 
   .submit-button,
