@@ -11,8 +11,8 @@ if (!$eventId) {
 
 $sql = "SELECT 
             e.*, 
-            e.Uhrzeit AS uhrzeit,              -- Alias, damit JS funktioniert
-            u.name AS organisator_name         -- Name mitladen
+            e.Uhrzeit AS uhrzeit,              
+            u.name AS organisator_name         
         FROM EVENT e 
         JOIN USER u ON e.organisator_id = u.user_id 
         WHERE e.event_id = :id";

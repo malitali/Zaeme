@@ -42,7 +42,7 @@ $success = $insert->execute([
 ]);
 
 if ($success) {
-    $user_id = $pdo->lastInsertId(); // 🆕 ID des neuen Users
+    $user_id = $pdo->lastInsertId(); 
     echo json_encode([
         "success" => true,
         "message" => "Registrierung erfolgreich",

@@ -191,7 +191,9 @@ body {
 
 
 /* Responsive Design für Mobile (320–480px) */
-@media (max-width: 480px) {
+@media (max-width: 480px)
+
+{
   .content {
     padding: 30px 20px;
     border-radius: 20px;

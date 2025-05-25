@@ -14,7 +14,6 @@ if (!$user_id || !$name || !$email) {
     exit;
 }
 
-// 📦 Passwort hashen (nur wenn ausgefüllt)
 $updatePass = '';
 $params = [
     ':user_id' => $user_id,
@@ -28,14 +27,11 @@ if (!empty($passwort)) {
     $params[':passwort'] = password_hash($passwort, PASSWORD_DEFAULT);
 }
 
-// 🛠️ Update ausführen (🟢 OHNE $updateBild!)
 $sql = "UPDATE USER SET name = :name, email = :email, geburtstag = :geburtstag $updatePass WHERE user_id = :user_id";
 
 $stmt = $pdo->prepare($sql);
 $success = $stmt->execute($params);
 
-// Optional für Debugging:
-// print_r($stmt->errorInfo());
 
 echo $success ? "Profil aktualisiert." : "Fehler beim Speichern.";
 

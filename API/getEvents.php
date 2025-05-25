@@ -9,7 +9,7 @@ try {
                 u.name AS organisator_name
             FROM EVENT e 
             JOIN USER u ON e.organisator_id = u.user_id
-            ORDER BY e.created_at DESC";  // ✅ Jetzt funktioniert das
+            ORDER BY e.created_at DESC";  
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute();

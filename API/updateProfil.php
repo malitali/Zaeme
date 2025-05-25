@@ -13,8 +13,6 @@ $name = $_POST['name'] ?? '';
 $email = $_POST['email'] ?? '';
 $geburtstag = $_POST['geburtstag'] ?? '';
 
-
-
 $sql = "UPDATE USER SET name = :name, email = :email, geburtstag = :geburtstag";
 if ($profilbild_url) {
     $sql .= ", profilbild_url = :profilbild_url";
