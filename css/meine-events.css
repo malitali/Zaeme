@@ -87,8 +87,13 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid #4A3F2E;
+  border: 2px solid #B4B897;
   overflow: hidden;
+}
+
+.event-card:hover {
+  background-color: #A68539;
+  transition: background-color 0.3s ease;
 }
 
 a {

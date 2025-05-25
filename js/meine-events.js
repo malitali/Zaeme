@@ -20,10 +20,11 @@ async function fetchMyEvents() {
     }
 
     events.forEach((event) => {
-      const eventCard = document.createElement("div");
-      eventCard.className = "event-card";
+      const eventWrapper = document.createElement("a");
+      eventWrapper.href = `event-detail.html?id=${event.event_id}`;
+      eventWrapper.className = "event-card";
 
-      eventCard.innerHTML = `
+      eventWrapper.innerHTML = `
         <div class="event-img-wrapper">
           <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
         </div>
@@ -39,7 +40,8 @@ async function fetchMyEvents() {
           </div>
         </div>
       `;
-      container.appendChild(eventCard);
+
+      container.appendChild(eventWrapper);
     });
   } catch (err) {
     console.error("Fehler beim Laden:", err);
@@ -47,8 +49,3 @@ async function fetchMyEvents() {
 }
 
 fetchMyEvents();
-
-
-
-
-
