@@ -21,8 +21,6 @@ async function loadProfile() {
     document.getElementById("email").value = user.email;
     document.getElementById("geburtstag").value = user.geburtstag || "";
 
-    
-    
   } catch (err) {
     console.error("Fehler beim Laden des Profils:", err);
   }
@@ -37,7 +35,7 @@ document.getElementById("profilForm").addEventListener("submit", async (e) => {
   try {
     const res = await fetch("API/updateUser.php", {
       method: "POST",
-      body: formData
+      body: formData,
     });
 
     const reply = await res.text();
@@ -48,3 +46,4 @@ document.getElementById("profilForm").addEventListener("submit", async (e) => {
 });
 
 loadProfile();
+

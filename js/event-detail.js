@@ -27,23 +27,22 @@ async function loadEventDetails() {
     }
 
     container.innerHTML = `
-    <div class="event-img-wrapper">
-  <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
-</div>
+      <div class="event-img-wrapper">
+        <img src="uploads/${event.bild_url}" alt="${event.titel}" class="event-img" />
+      </div>
 
-    <h2>${event.titel}</h2>
-    <div class="event-info">
-      <div class="icon-text"><span class="icon">📍</span> ${event.location}</div>
-      <div class="icon-text"><span class="icon">📅</span> ${event.datum}</div>
-      <div class="icon-text"><span class="icon">🕘</span> ${event.uhrzeit}</div>
-    </div>
-    <div class="event-note">${event.notizen}</div>
-    <div class="organizer">
-      Organisiert von ${event.organisator_name}
-    </div>
-    <div class="question"><strong>Bist du dabei?</strong></div>
-  `;
-  
+      <h2>${event.titel}</h2>
+      <div class="event-info">
+        <div class="icon-text"><span class="icon">📍</span> ${event.location}</div>
+        <div class="icon-text"><span class="icon">📅</span> ${event.datum}</div>
+        <div class="icon-text"><span class="icon">🕘</span> ${event.uhrzeit}</div>
+      </div>
+      <div class="event-note">${event.notizen}</div>
+      <div class="organizer">
+        Organisiert von ${event.organisator_name}
+      </div>
+      <div class="question"><strong>Bist du dabei?</strong></div>
+    `;
   } catch (err) {
     console.error("Fehler beim Laden:", err);
   }
@@ -68,6 +67,7 @@ async function respondToEvent(status) {
     console.error("Fehler bei Antwort:", err);
   }
 }
+
 
 
 

@@ -22,14 +22,22 @@ body {
   gap: 20px;
 }
 
+/* --- Event Card --- */
+
 .event-card {
   background-color: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 10px #B4B897;;
+  box-shadow: 0 0 10px #B4B897;
   margin-bottom: 1.5rem;
-  
 }
+
+.event-img-wrapper img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ccc;
+}
+
 .event-img {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -37,12 +45,6 @@ body {
   border-radius: 20px;
   display: block;
   margin-bottom: 20px;
-}
-
-.event-img-wrapper img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ccc;
 }
 
 .event-details {
@@ -74,9 +76,13 @@ body {
 
 .organizer {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  margin-top: 1rem;
   font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #000;
 }
 
 .organizer img {
@@ -98,12 +104,10 @@ body {
   display: flex;
   align-items: center;
   font-weight: bold;
-  min-height: 80px;
-  display: flex;
-  align-items: center;
 }
 
-/* Ja / Nein Buttons */
+/* --- Ja / Nein Buttons --- */
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -138,7 +142,8 @@ body {
   transform: scale(1.05);
 }
 
-/* Button-Gruppe unten */
+/* --- Hauptbuttons (z. B. unten) --- */
+
 .button-group {
   display: flex;
   flex-direction: column;
@@ -169,31 +174,18 @@ body {
   transform: translateY(-1px);
 }
 
-.organizer {
-  display: flex;
-  justify-content: flex-end;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-  color: #000;
-}
+/* --- Sonstige --- */
 
 .question {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 1.rem;
+  margin-bottom: 1rem;
 }
 
+/* --- Mobile Responsive --- */
 
-
-
-
-/* Responsive Design für Mobile (320–480px) */
-@media (max-width: 480px)
-
-{
+@media (max-width: 480px) {
   .content {
     padding: 30px 20px;
     border-radius: 20px;
@@ -228,13 +220,11 @@ body {
 
   .organizer {
     font-size: 14px;
-    margin-top: 0.5rem;
     margin-bottom: 1rem;
   }
 
   .question {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
   }
 
   .buttons {
@@ -242,17 +232,11 @@ body {
     gap: 10px;
   }
 
-  .buttons button {
-    width: 100%;
-    max-width: 300px;
-    padding: 12px;
-    font-size: 1rem;
-  }
-
+  .buttons button,
   .main-button {
     width: 100%;
     max-width: 300px;
-    font-size: 16px;
+    font-size: 1rem;
     padding: 12px;
   }
 
@@ -261,5 +245,6 @@ body {
     margin-top: 1.5rem;
   }
 }
+
 
   

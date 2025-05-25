@@ -49,3 +49,4 @@ async function fetchMyEvents() {
 }
 
 fetchMyEvents();
+

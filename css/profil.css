@@ -15,7 +15,6 @@ body {
   padding: 0;
 }
 
-
 .logo-bar {
   background-color: transparent;
   width: 100%;
@@ -76,7 +75,7 @@ body {
   border: 1px solid #ccc;
   font-size: 14px;
   width: 100%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 textarea {
@@ -113,53 +112,7 @@ textarea {
 }
 
 .submit-button {
-  margin-top: 20px;
-  padding: 12px;
-  background-color: #FFC44E;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #f0b733;
-}
-
-.main-button {
-  background-color: #FFC44E;
-  color: #000;
-  font-weight: 600;
-  padding: 14px;
-  border-radius: 14px;
-  font-size: 18px;
-  text-align: center;
-  border: 1px solid #4A3F2E;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.2s;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  width: 100%;
- 
-  margin: 0 auto;
-  display: block;
-}
-
-.main-button:hover {
-  background-color: #A68539;
-  transform: translateY(-1px);
-}
-
-.button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 20px;
-  width: 100%;
-  align-items: center;
-}
-
-.submit-button {
+  margin-top: 24px;
   background-color: #FFC44E;
   color: #000;
   font-weight: 600;
@@ -183,19 +136,47 @@ textarea {
   transform: translateY(-1px);
 }
 
+.main-button {
+  background-color: #FFC44E;
+  color: #000;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #4A3F2E;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.main-button:hover {
+  background-color: #A68539;
+  transform: translateY(-1px);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  width: 100%;
+  align-items: center;
+}
+
 #profilForm {
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
 }
 
 .speichern-button {
-  margin-top: 24px; 
-  margin-bottom: 0px; 
+  margin-bottom: 0;
 }
 
-/* Responsive Design für Mobile (320–480px) */
-@media (max-width: 480px) 
-
-{
+/* ✅ Responsive Design für Mobile (320–480px) */
+@media (max-width: 480px) {
   .logo-bar {
     padding: 1rem;
     max-width: 100%;
@@ -246,6 +227,7 @@ textarea {
     max-width: 100px;
   }
 }
+
 
 
 

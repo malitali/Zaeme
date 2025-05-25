@@ -13,8 +13,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
   min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Logo-Bereich */
+.logo-bar {
+  background-color: transparent;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 1rem;
 }
 
 .Blumen-Titel {
@@ -27,19 +43,7 @@ body {
 .events-logo {
   width: 900px;
   height: auto;
-  margin-bottom: -220px;
-  margin-top: -200px;
-}
-
-.logo-bar {
-  background-color: transparent;
-  width: 360%;
-  max-width: 600px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem 1rem;
+  margin: -200px 0 -220px;
 }
 
 .profile-pic {
@@ -52,6 +56,7 @@ body {
   right: 16px;
 }
 
+/* Kopfbereich */
 .header {
   background-color: #FFFDEF;
   padding: 50px 40px;
@@ -66,7 +71,7 @@ body {
   margin-bottom: 40px;
 }
 
-.header > .content {
+.header .content {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -77,9 +82,10 @@ body {
   font-size: 42px;
   font-weight: 600;
   margin-bottom: 40px;
-  color: #000000;
+  color: #000;
 }
 
+/* Veranstaltungsbereich */
 .section-title {
   font-size: 17px;
   font-weight: 600;
@@ -94,71 +100,50 @@ body {
   box-shadow: 0 6px 16px rgba(74, 63, 46, 0.4);
   padding: 50px 40px;
   text-align: left;
-  margin-bottom: 30px;
   width: 100%;
   max-width: 650px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   border: 2px solid #B4B897;
-  overflow: hidden;
   margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
 .event-card:hover {
   background-color: #A68539;
-  transition: background-color 0.3s ease;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.event-img-wrapper img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ccc;
 }
 
 .event-img {
   width: 100%;
-  max-width: 100%;
   aspect-ratio: 2 / 1;
-  height: auto;
   border-radius: 12px;
   object-fit: cover;
-  display: block;
   margin-bottom: 1rem;
+  display: block;
 }
 
 .event-details h3 {
   font-size: 25px;
   font-weight: 600;
   margin: 10px 0;
-  color: #000;
 }
 
 .event-info {
   font-size: 20px;
-  margin-bottom: 1rem;
   line-height: 1.6;
-}
-
-.event-info .icon {
-  margin-right: 20px;
 }
 
 .organizer {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   font-size: 20px;
-  color: #000;
-  margin-top: 10px;
   font-weight: 600;
+  margin-top: 10px;
 }
 
+/* Buttons */
 .button-group {
   display: flex;
   flex-direction: column;
@@ -167,36 +152,30 @@ a {
   width: 100%;
 }
 
-.main-button {
+.main-button,
+.logout-button {
   background-color: #FFC44E;
   color: #000;
   font-weight: 600;
   padding: 14px;
   border-radius: 14px;
   font-size: 18px;
-  text-align: center;
   border: 1px solid #4A3F2E;
-  text-decoration: none;
+  text-align: center;
   transition: background-color 0.3s, transform 0.2s;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-.main-button:hover {
+.main-button:hover,
+.logout-button:hover {
   background-color: #A68539;
   transform: translateY(-1px);
 }
 
-.top-bar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 20px;
-  width: 100%;
-  max-width: 600px;
-}
-
 .logout-button {
   background-color: #ff6b6b;
-  color: white;
+  color: #fff;
   border: 1px solid #b33939;
 }
 
@@ -204,15 +183,10 @@ a {
   background-color: #e63946;
 }
 
-
-
-
-
-/* Responsive für Mobile (320–480px) */
+/* Mobile Responsive */
 @media (max-width: 480px) {
   .logo-bar {
     padding: 1rem;
-    max-width: 100%;
   }
 
   .Blumen-Titel {
@@ -237,7 +211,6 @@ a {
   .header {
     padding: 30px 20px;
     border-radius: 20px;
-    max-width: 100%;
     margin-bottom: 20px;
   }
 
@@ -278,6 +251,7 @@ a {
     margin-top: 15px;
   }
 }
+
 
 
 
