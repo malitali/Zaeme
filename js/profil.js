@@ -28,8 +28,6 @@ async function loadProfile() {
   }
 }
 
-
-
 document.getElementById("profilForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 

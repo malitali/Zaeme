@@ -28,8 +28,6 @@ body {
   padding: 2rem 1rem 1rem;
 }
 
-
-
 .events-logo {
   width: 900px;
   height: auto;
@@ -140,4 +138,60 @@ textarea {
 .main-button:hover {
   background-color: #A68539;
   transform: translateY(-1px);
+}
+
+
+
+@media (max-width: 480px) {
+  .logo-bar {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .events-logo {
+    width: 550px;
+    margin-top: -95px;
+    margin-bottom: -95px;
+  }
+
+  .header {
+    padding: 30px 20px;
+    border-radius: 20px;
+    max-width: 95%;
+    margin-bottom: 20px;
+  }
+
+  .welcome {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .event-form {
+    gap: 12px;
+  }
+
+  .event-form label {
+    font-size: 13px;
+  }
+
+  .event-form input,
+  .event-form textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .image-upload {
+    height: 160px;
+    font-size: 1.5rem;
+  }
+
+  .main-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .button-group {
+    gap: 12px;
+    margin-top: 20px;
+  }
 }

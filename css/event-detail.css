@@ -39,8 +39,6 @@ body {
   margin-bottom: 20px;
 }
 
-
-
 .event-img-wrapper img {
   width: 100%;
   height: auto;
@@ -63,7 +61,6 @@ body {
   margin: 1rem 0;
 }
 
-
 .event-info .icon {
   margin-right: 0.5rem;
 }
@@ -74,7 +71,6 @@ body {
   gap: 12px;
   font-size: 18px;
 }
-
 
 .organizer {
   display: flex;
@@ -96,29 +92,18 @@ body {
   border-radius: 12px;
   font-size: 1rem;
   margin: 1.5rem 0 0.5rem;
-  min-height: 80px; /* diese Zeile ersetzt die alte min-height */
+  min-height: 80px;
   line-height: 1.5;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  font-weight: bold; /* ➕ Text fett */
-
-
-
-
-  /* NEU: immer mindestens 80px hoch */
+  font-weight: bold;
   min-height: 80px;
   display: flex;
   align-items: center;
 }
 
-
-
-
-
-
-
-/* ✅ Ja / Nein Buttons untereinander */
+/* Ja / Nein Buttons */
 .buttons {
   display: flex;
   justify-content: center;
@@ -153,7 +138,7 @@ body {
   transform: scale(1.05);
 }
 
-/* ✅ Button-Gruppe unten */
+/* Button-Gruppe unten */
 .button-group {
   display: flex;
   flex-direction: column;
@@ -189,11 +174,10 @@ body {
   justify-content: flex-end;
   font-weight: bold;
   margin-top: 0.5rem;
-  margin-bottom: 1.5rem; /* mehr Luft vor „Bist du dabei?“ */
+  margin-bottom: 1.5rem;
   font-size: 1rem;
   color: #000;
 }
-
 
 .question {
   text-align: center;
@@ -202,7 +186,11 @@ body {
   margin-bottom: 1.rem;
 }
 
-/* ✅ Responsive Design für Mobile (320–480px) */
+
+
+
+
+/* Responsive Design für Mobile (320–480px) */
 @media (max-width: 480px) {
   .content {
     padding: 30px 20px;
@@ -270,8 +258,6 @@ body {
     gap: 14px;
     margin-top: 1.5rem;
   }
-
-  
 }
 
   

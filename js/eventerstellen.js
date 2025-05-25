@@ -49,10 +49,10 @@ window.addEventListener("DOMContentLoaded", () => {
       const reply = await res.text();
       console.log("Antwort vom Server:", reply);
 
-      // ✅ Erfolgsmeldung anzeigen
+      // Erfolgsmeldung anzeigen
       alert("Event wurde erfolgreich erstellt!");
 
-      // 🔁 Auf der Seite bleiben + Formular leeren
+      // Auf der Seite bleiben + Formular leeren
       document.getElementById("eventForm").reset();
       uploadBox.innerHTML = `<label for="image">📷</label>`;
     } catch (err) {

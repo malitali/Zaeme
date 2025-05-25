@@ -33,8 +33,8 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     alert(result.message);
 
     if (result.success) {
-      localStorage.setItem("user_id", result.user_id); // 🆕 Automatisch eingeloggt
-      window.location.href = "index.html"; // 🆕 Weiterleitung zur Startseite
+      localStorage.setItem("user_id", result.user_id); // Automatisch eingeloggt
+      window.location.href = "index.html"; // Weiterleitung zur Startseite
     }
 
   } catch (err) {

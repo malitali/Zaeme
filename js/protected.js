@@ -1,16 +1,15 @@
 console.log("protected.js geladen");
 
-// fetch
 fetch("./API/protected.php")
   .then((response) => response.json())
   .then((data) => {
     console.log(data);
 
     if (data.status === "error") {
-      // redirect to login.html
+      // Weiterleitung zu login.html
       window.location.href = "login.html";
     } else {
-      // write welcome message to html
+      // Willkommensnachricht in HTML schreiben
       document.getElementById("welcome-message").innerHTML =
         "Willkommen " + data.username;
     }

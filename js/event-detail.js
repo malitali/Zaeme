@@ -44,10 +44,6 @@ async function loadEventDetails() {
     <div class="question"><strong>Bist du dabei?</strong></div>
   `;
   
-  
-
-  
-
   } catch (err) {
     console.error("Fehler beim Laden:", err);
   }

@@ -114,9 +114,21 @@ input[type="password"]:focus {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Optional – Hintergrund bis unten */
 html, body {
   height: 100%;
 }
+
+/* Mobile Optimierung */
+@media (max-width: 400px) {
+  .logo {
+    width: 220px;
+  }
+
+  .login-container {
+    width: 100%;
+    margin-top: -20px;
+  }
+}
+
 
 

@@ -27,8 +27,6 @@ body {
   padding: 2rem 1rem 1rem;
 }
 
-
-
 .events-logo {
   width: 900px;
   height: auto;
@@ -185,16 +183,71 @@ textarea {
   transform: translateY(-1px);
 }
 
-
-
 #profilForm {
-  margin-bottom: 24px; /* mehr Abstand nach unten */
+  margin-bottom: 24px; 
 }
 
 .speichern-button {
-  margin-top: 24px; /* Abstand nach oben */
-  margin-bottom: 0px; /* falls du das noch drin hast */
+  margin-top: 24px; 
+  margin-bottom: 0px; 
 }
+
+/* Responsive Design für Mobile (320–480px) */
+@media (max-width: 480px) 
+
+{
+  .logo-bar {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .events-logo {
+    width: 550px;
+    margin-top: -100px;
+    margin-bottom: -110px;
+  }
+
+  .form-container {
+    padding: 30px 20px;
+    border-radius: 20px;
+    max-width: 95%;
+    margin-bottom: 20px;
+  }
+
+  .form-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .event-form label {
+    font-size: 13px;
+  }
+
+  .event-form input,
+  .event-form textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .submit-button,
+  .main-button {
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .button-group {
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .profilbild-preview {
+    max-width: 100px;
+  }
+}
+
+
 
 
 

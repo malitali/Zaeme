@@ -1,8 +1,7 @@
-// logout.js
 document
   .getElementById("logout-button")
   .addEventListener("click", async (e) => {
-    // Prevent the default button behavior
+    // Verhindert das Standardverhalten der Schaltfläche
     e.preventDefault();
 
     try {
@@ -14,7 +13,7 @@ document
       const result = await response.json();
 
       if (result.status === "success") {
-        // Redirect to login page after successful logout
+        // Nach erfolgreicher Abmeldung zur Anmeldeseite weiterleiten
         window.location.href = "login.html";
       } else {
         console.error("Logout failed");
